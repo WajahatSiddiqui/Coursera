@@ -14,7 +14,7 @@ class QuickFind {
 	 * Check if p is connected with q
 	 * T(n) = O(1)
 	 */
-	public boolean connected(int p, int q) {
+	public boolean find(int p, int q) {
 		return id[p] == id[q];
 	}
 
@@ -23,12 +23,16 @@ class QuickFind {
 	 * Loop through the id and set q for all p
 	 * T(n) = O(n)
 	 */
-	public void union(int p, int q) {
+	public void slowUnion(int p, int q) {
 		int pid = id[p];
 		int qid = id[q];
 
 		for (int i : id) {
 			if (i == pid) i = qid; // set the id for q for all p
 		}
+	}
+
+	public static void main(String args[]) {
+
 	}
 }
